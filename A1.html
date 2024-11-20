@@ -31,36 +31,30 @@ console.log(products);
     <div id="product-container"></div>
 
     <script>
-        // Sample product data
         const products = [
             { name: "Product 1", price: "$10", description: "Description of Product 1" },
             { name: "Product 2", price: "$20", description: "Description of Product 2" },
             { name: "Product 3", price: "$30", description: "Description of Product 3" }
         ];
 
-        // Function to display products
         function displayProducts(products) {
             const container = document.getElementById('product-container');
             container.innerHTML = ''; // Clear any existing content
 
             products.forEach(product => {
-                // Create a new div for each product
                 const productDiv = document.createElement('div');
                 productDiv.className = 'product';
 
-                // Add product details
                 productDiv.innerHTML = `
                     <h2>${product.name}</h2>
                     <p>Price: ${product.price}</p>
                     <p>${product.description}</p>
                 `;
 
-                // Append the product div to the container
                 container.appendChild(productDiv);
             });
         }
 
-        // Call the function to display products
         displayProducts(products);
     </script>
 </body>
@@ -74,14 +68,10 @@ let products = [
 //Task 2: Write a function to display the product information on the webpage dynamically.
 //Task 3: Implement an event listener to trigger the display of products when the page loads.
 window.addEventListener('load', () => {
-    // Function to display products
     function displayProducts() {
-        // Your code to display products goes here
         console.log('Displaying products...');
-        // Example: document.getElementById('products').style.display = 'block';
     }
 
-    // Call the function to display products
     displayProducts();
 });
 
@@ -131,15 +121,11 @@ window.addEventListener('load', () => {
 
     <script>
         document.getElementById('userForm').addEventListener('submit', function(event) {
-            event.preventDefault(); // Prevent the default form submission
-
-            // Create a FormData object from the form
+            event.preventDefault(); 
             const formData = new FormData(event.target);
 
-            // Convert FormData to a plain object
             const userObject = Object.fromEntries(formData.entries());
 
-            // Log the object to the console (or handle it as needed)
             console.log(userObject);
         });
     </script>
@@ -153,21 +139,18 @@ window.addEventListener('load', () => {
     <title>Form Validation</title>
     <script>
         function validateForm() {
-            // Get the form element
             var form = document.forms["myForm"];
             
-            // Get the values of the required fields
             var name = form["name"].value;
             var email = form["email"].value;
             var message = form["message"].value;
             
-            // Check if any of the required fields are empty
             if (name == "" || email == "" || message == "") {
                 alert("All required fields must be filled out");
-                return false; // Prevent form submission
+                return false; 
             }
             
-            return true; // Allow form submission
+            return true; 
         }
     </script>
 </head>
@@ -244,9 +227,8 @@ window.addEventListener('load', () => {
 
     <script>
         document.getElementById('box').addEventListener('click', function() {
-            // Generate a random color
             const randomColor = '#' + Math.floor(Math.random()*16777215).toString(16);
-            // Change the box's background color
+         
             this.style.backgroundColor = randomColor;
         });
     </script>
